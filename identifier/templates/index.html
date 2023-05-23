@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Identifier</title>
+</head>
+<style>
+     .content
+{
+    text-align: center;
+}
+</style>
+<body style="background-color: aliceblue;">
+    <div class="content">
+    
+<body>
+    <h1>Language Identifier</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Identify Language">
+    </form>
+    
+    {% if result %}
+        <h2>Detected Language: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
